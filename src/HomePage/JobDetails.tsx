@@ -17,7 +17,7 @@ export default function JobDetails() {
     const fetchJob = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`http://localhost:5000/api/jobs/jobs/${id}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/jobs/${id}`);
         if (!res.ok) throw new Error("Job not found");
         const data = await res.json();
         setJob(data);

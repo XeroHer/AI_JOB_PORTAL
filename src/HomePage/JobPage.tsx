@@ -16,7 +16,7 @@ export default function JobPage() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/jobs");
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs`);
         if (!res.ok) throw new Error("Failed to fetch jobs");
 
         const data = await res.json();

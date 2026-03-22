@@ -15,7 +15,7 @@ export default function JobSeekerDashboard() {
 
         // 1️⃣ Fetch applications count
         const appRes = await fetch(
-          "http://localhost:5000/api/jobs/applications/count",
+          `${import.meta.env.VITE_API_URL}/api/jobs/applications/count`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const appData = await appRes.json();
@@ -23,7 +23,7 @@ export default function JobSeekerDashboard() {
 
         // 2️⃣ Fetch recommended jobs (includes ATS score & avgAtsScore)
         const recRes = await fetch(
-          "http://localhost:5000/api/jobs/user/recommended-jobs",
+          `${import.meta.env.VITE_API_URL}/api/jobs/user/recommended-jobs`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const recData = await recRes.json();

@@ -50,7 +50,7 @@ export default function ResumeAnalyzer() {
     const fetchJobs = async () => {
       try {
         setJobsLoading(true);
-        const res = await axios.get("http://localhost:5000/api/jobs");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/jobs`);
         setJobs(res.data.jobs || res.data || []);
       } catch (err) {
         console.error("Failed to fetch jobs", err);
@@ -66,7 +66,7 @@ export default function ResumeAnalyzer() {
     const fetchUserRecommendedJobs = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/jobs/user/recommended-jobs",
+          `${import.meta.env.VITE_API_URL}/api/jobs/user/recommended-jobs`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -125,7 +125,7 @@ export default function ResumeAnalyzer() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/jobs/ats/analyze",
+        `${import.meta.env.VITE_API_URL}/api/jobs/ats/analyze`,
         formData,
         {
           headers: {

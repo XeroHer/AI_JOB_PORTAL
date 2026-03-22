@@ -15,7 +15,7 @@ const RecruiterJobs = () => {
     if (!token) return navigate("/login");
 
     try {
-      const res = await fetch("http://localhost:5000/api/jobs/recruiter", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/recruiter`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch jobs");
@@ -47,7 +47,7 @@ const RecruiterJobs = () => {
     if (!window.confirm("Are you sure you want to delete this job?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/jobs/${jobId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/${jobId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

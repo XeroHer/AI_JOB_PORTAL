@@ -5,7 +5,7 @@ import DashboardStats from "./DashboardStats";
 import { useNavigate } from "react-router-dom";
 import Navbar1 from "./Navbar";
 
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
 
 const RecruiterDashboard = () => {
   const navigate = useNavigate();

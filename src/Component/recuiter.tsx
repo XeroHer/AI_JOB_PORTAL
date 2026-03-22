@@ -20,7 +20,7 @@ const RecruiterDashboardPage = () => {
       try {
         /* Fetch jobs count */
         const resJobs = await fetch(
-          "http://localhost:5000/api/jobs/recruiter/count",
+          `${import.meta.env.VITE_API_URL}/api/jobs/recruiter/count`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -30,7 +30,7 @@ const RecruiterDashboardPage = () => {
 
         /* Fetch applicants */
         const resApps = await fetch(
-          "http://localhost:5000/api/jobs/recruiter/applicants",
+         `${import.meta.env.VITE_API_URL}/api/jobs/recruiter/applicants`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

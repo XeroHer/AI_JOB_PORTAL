@@ -77,7 +77,7 @@ const ApplicantsTable = ({ applicants = [], onStatusChange }) => {
                     <td className="border p-2">
                       {app.resumePath ? (
                         <a
-                          href={`http://localhost:5000/${app.resumePath}`}
+                          href={`${import.meta.env.VITE_API_URL}/${app.resumePath}`}
                           target="_blank"
                           rel="noreferrer"
                           className="text-blue-600 underline"
@@ -153,7 +153,7 @@ const ApplicantsTable = ({ applicants = [], onStatusChange }) => {
                 <div className="mt-2">
                   {app.resumePath ? (
                     <a
-                      href={`http://localhost:5000/${app.resumePath}`}
+                      href={`${import.meta.env.VITE_API_URL}/${app.resumePath}`}
                       target="_blank"
                       rel="noreferrer"
                       className="text-blue-600 underline text-sm"

@@ -102,7 +102,7 @@ const MultiStepApplyForm = ({ jobId, onClose }) => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/jobs/jobs/${jobId}/apply`,
+       `${import.meta.env.VITE_API_URL}/api/jobs/jobs/${jobId}/apply`,
         {
           method: "POST",
           headers: {

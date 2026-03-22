@@ -48,7 +48,7 @@ export default function RecommendedJobsPage() {
       setLoading(true);
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/jobs/user/recommended-jobs",
+          `${import.meta.env.VITE_API_URL}/api/jobs/user/recommended-jobs`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 

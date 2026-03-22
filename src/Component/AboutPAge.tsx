@@ -11,7 +11,7 @@ export default function AboutPage() {
 
   // Animate counters
   useEffect(() => {
-    fetch("http://localhost:5000/api/jobs/statics", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/jobs/statics`, {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => {

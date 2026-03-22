@@ -16,7 +16,7 @@ const ApplicantsPage = () => {
   // ---------------- Fetch Jobs ----------------
   const fetchJobs = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/jobs/recruiter", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/recruiter`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -36,7 +36,7 @@ const ApplicantsPage = () => {
       setError("");
 
       const res = await fetch(
-        "http://localhost:5000/api/jobs/recruiter/applicants",
+        `${import.meta.env.VITE_API_URL}/api/jobs/recruiter/applicants`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -59,7 +59,7 @@ const ApplicantsPage = () => {
   const updateStatus = async (applicationId, status) => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/jobs/applications/${applicationId}/status`,
+        `${import.meta.env.VITE_API_URL}/api/jobs/applications/${applicationId}/status`,
         {
           method: "PATCH",
           headers: {

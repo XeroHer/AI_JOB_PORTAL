@@ -25,7 +25,7 @@ export default function Herosection() {
       if (location.trim()) params.append("location", location.trim());
 
       const res = await fetch(
-        `http://localhost:5000/api/jobs?${params.toString()}`
+       `${import.meta.env.VITE_API_URL}/api/jobs?${params.toString()}`
       );
 
       if (!res.ok) {

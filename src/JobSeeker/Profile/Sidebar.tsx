@@ -22,7 +22,7 @@ export default function Sidebar() {
       return;
     }
 
-    fetch("http://localhost:5000/api/jobs/profile", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/jobs/profile`, {
       headers: { Authorization: `Bearer ${token}` },
       credentials: "include",
     })

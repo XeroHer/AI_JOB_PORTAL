@@ -16,7 +16,7 @@ const ForgotPasswordFlow: React.FC = () => {
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState(false);
 
-  const API_BASE = "http://localhost:5000/api/auth";
+  const API_BASE = `${import.meta.env.VITE_API_URL}/api/auth`;
 
   // OTP countdown timer
   useEffect(() => {

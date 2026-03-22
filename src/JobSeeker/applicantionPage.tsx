@@ -41,7 +41,7 @@ export default function Applications() {
       return;
     }
 
-    fetch("http://localhost:5000/api/jobs/applications", {
+    fetch(`${import.meta.env.VITE_API_URL}/api/jobs/applications`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(async (res) => {
