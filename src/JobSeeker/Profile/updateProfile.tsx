@@ -90,7 +90,7 @@ export default function UpdateProfilePage() {
       // Resume
       if (resumeFile) formData.append("resume", resumeFile);
 
-      const res = await fetch("http://localhost:5000/api/jobs/profile", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/jobs/profile`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` }, // DO NOT set Content-Type manually
         body: formData,
