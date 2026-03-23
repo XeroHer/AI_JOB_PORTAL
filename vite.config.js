@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(),
     tailwindcss(),
   ],
-  base:process.env.VITE_API_URL
+  base:process.env.VITE_API_URL,
   server: {
     https: {
       key: fs.readFileSync("localhost+2-key.pem"),
